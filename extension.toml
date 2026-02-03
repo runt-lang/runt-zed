@@ -1,0 +1,13 @@
+schema_version = 1
+id = "runt"
+name = "Runt"
+version = "0.1.0"
+description = "Runt language support for Zed"
+authors = ["TheJunt"]
+repository = "https://github.com/runt-lang/runt-zed"
+
+[language_servers]
+
+[grammars.runt]
+repository = ""
+commit = ""
