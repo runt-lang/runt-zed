@@ -12,9 +12,8 @@
   "extern"
   "import"
   "mod"
+  "pub"
 ] @keyword
-
-(visibility) @keyword
 
 [
   "if"
@@ -36,7 +35,14 @@
 
 [
   "mut"
+  "ref"
   "as"
+  "pure"
+  "comptime"
+  "unsafe"
+  "uniform"
+  "shared"
+  "atomic"
 ] @keyword.modifier
 
 ;; Operators
@@ -50,6 +56,7 @@
   "|"
   "^"
   "!"
+  "~"
   "<<"
   ">>"
   "&&"
@@ -155,7 +162,8 @@
   name: (identifier) @variable.builtin)
 
 ;; Patterns
-(pattern_identifier) @variable
+(pattern
+  (identifier) @variable)
 
 (constructor_pattern
   (identifier) @type)
@@ -196,10 +204,11 @@
   (#match? @type "^[A-Z]"))
 
 ;; Paths
-(path_expression
+(path
   (identifier) @module)
 
-(import_path
-  (identifier) @module)
+(import_decl
+  (path
+    (identifier) @module))
 
 "*" @character.special
