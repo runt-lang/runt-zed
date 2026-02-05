@@ -3,7 +3,7 @@ id = "runt"
 name = "Runt"
 version = "0.1.0"
 description = "Runt language support for Zed"
-authors = ["TheJunt"]
+authors = ["thejunt"]
 repository = "https://github.com/runt-lang/runt-zed"
 
 [grammars.runt]
