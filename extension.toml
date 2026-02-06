@@ -10,4 +10,6 @@ repository = "https://github.com/runt-lang/runt-zed"
 repository = "https://github.com/runt-lang/runt-treesitter"
 rev = "b0f98c14a2e92e5b991be6aaea3d1ebd76f2e9cc"
 
-[language_servers]
+[language_servers.runtc-lsp]
+name = "runtc-lsp"
+languages = ["Runt"]
