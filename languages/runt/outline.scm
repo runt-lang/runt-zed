@@ -14,6 +14,10 @@
 (latent_def
   name: (identifier) @name) @item
 
+; Macro
+(macro_def
+  name: (identifier) @name) @item
+
 ; Categories
 (category_def
   name: (identifier) @name) @item
