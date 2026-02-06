@@ -26,6 +26,7 @@ module.exports = grammar({
         $.struct_def,
         $.enum_def,
         $.latent_def,
+        $.macro_def,
         $.const_def,
         $.static_def,
         $.category_def,
@@ -142,6 +143,81 @@ module.exports = grammar({
       seq($.integer_literal, optional(seq(":", $.integer_literal))),
 
     //*****************************************************************************
+    // MACRO
+    //*****************************************************************************
+
+    macro_def: ($) =>
+      seq(
+        optional($.visibility),
+        "macro",
+        field("name", $.identifier),
+        "{",
+        optional($.macro_body),
+        "}",
+        optional(";"),
+      ),
+
+    macro_body: ($) => repeat1($._macro_token),
+
+    _macro_token: ($) =>
+      choice(
+        seq("{", optional($.macro_body), "}"),
+        $.identifier,
+        $.integer_literal,
+        $.float_literal,
+        $.string_literal,
+        $.char_literal,
+        $.bool_literal,
+        $.primitive_type,
+        $._macro_punct,
+      ),
+
+    _macro_punct: ($) =>
+      choice(
+        "(",
+        ")",
+        "[",
+        "]",
+        ",",
+        ".",
+        ":",
+        ";",
+        "::",
+        "->",
+        "=>",
+        "..",
+        "..=",
+        "#",
+        "@",
+        "?",
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "&",
+        "|",
+        "^",
+        "~",
+        "<<",
+        ">>",
+        "==",
+        "!=",
+        "<",
+        ">",
+        "<=",
+        ">=",
+        "&&",
+        "||",
+        "!",
+        "=",
+        "+=",
+        "-=",
+        "*=",
+        "/=",
+      ),
+
+    //*****************************************************************************
     // CONST / STATIC / VAR
     //*****************************************************************************
 
@@ -246,8 +322,9 @@ module.exports = grammar({
       seq(
         "#",
         "[",
-        $.identifier,
-        optional(seq("(", commaSep($._expression), ")")),
+        commaSep1(
+          seq($.identifier, optional(seq("(", commaSep($._expression), ")"))),
+        ),
         "]",
       ),
 
