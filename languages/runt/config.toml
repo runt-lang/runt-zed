@@ -1,6 +1,6 @@
 name = "Runt"
 grammar = "runt"
-path_suffixes = ["runt"]
+path_suffixes = ["rn"]
 line_comments = ["// ", "/// "]
 block_comment = ["/*", "*/"]
 autoclose_before = ";:.,=}])>"
