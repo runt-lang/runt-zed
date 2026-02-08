@@ -12,10 +12,9 @@ impl zed::Extension for RuntExtension {
         _language_server_id: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> zed::Result<zed::Command> {
-        // Look for runtc-lsp in PATH or use the binary from settings
         let path = worktree
             .which("runtc-lsp")
-            .unwrap_or_else(|| "runtc-lsp".to_string());
+            .unwrap_or_else(|| "/home/junt/.local/bin/runtc-lsp".to_string());
 
         Ok(zed::Command {
             command: path,

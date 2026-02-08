@@ -6,10 +6,10 @@ description = "Runt language support"
 authors = ["thejunt"]
 repository = "https://github.com/runt-lang/runt-zed"
 
-[grammars.rn]
+[grammars.runt]
 repository = "https://github.com/runt-lang/runt-treesitter"
 rev = "3f307b6d836f7ba856e5ffb3b1a2ccf70b66ad01"
 
-[language_servers.rnc-lsp]
+[language_servers.runtc-lsp]
 name = "runtc-lsp"
 languages = ["Runt"]
