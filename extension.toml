@@ -8,7 +8,7 @@ repository = "https://github.com/runt-lang/runt-zed"
 
 [grammars.runt]
 repository = "https://github.com/runt-lang/runt-treesitter"
-rev = "7454014f3b4dfcf1a4a599755d72479011660929"
+rev = "00794cfb2c2b786f2a80416202cfeabc6c2edaf1"
 
 [language_servers.runtc-lsp]
 name = "runtc-lsp"
