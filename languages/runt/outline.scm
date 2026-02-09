@@ -10,8 +10,8 @@
 (enum_def
   name: (identifier) @name) @item
 
-; Latent
-(latent_def
+; Codec
+(codec_def
   name: (identifier) @name) @item
 
 ; Macro
